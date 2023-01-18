@@ -22,4 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shop.urls')),
     path('segragate', include('segragation.urls'))
-] + static(settings.MEDIA_URL, document_root=s ettings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
