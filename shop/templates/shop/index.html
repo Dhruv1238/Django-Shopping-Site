@@ -2,8 +2,9 @@
 {%block title%} Kachra Masti {%endblock%}  
 {%block body%}  
 {%load static%}
+
 <div class="card-group">
-  {%for i in product|slice:":"%}
+  {%for i in product|slice:"1:"%}
   <div class="card">
     <img src="/media/{{i.image}}" class="card-img-top" alt="...">
     <div class="card-body">
@@ -17,6 +18,15 @@
   </div><br><div class="card-group">
   {%endif%}
   {%endfor%}
+  <div class="card">
+    <img src="{{response.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">API</h5>
+      <p class="card-text">{{response.date}}</p>
+      <p class="card-text">CHoot</p>
+      <button id="pr{{i.id}}" class="btn btn-primary cart">Add to Cart</button>
+    </div>
+  </div>
   {% block js %} 
   <script>
     console.log('working');
